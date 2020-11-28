@@ -3,11 +3,6 @@ FROM node:12 AS builder
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-#COPY package*.json ./
-
 RUN git clone https://github.com/quivsoth/inventory-manager.git
 
 RUN npm install
@@ -17,9 +12,13 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-
 FROM selenium/standalone-chrome
 
 COPY --from=builder . .
 EXPOSE 4444
-CMD [ "node", "index.js" ]
+EXPOSE 8080
+
+RUN chmod 777 /usr/src/app/inventory-manager/startup.sh 
+ENTRYPOINT ["/usr/src/app/inventory-manager/startup.sh"]
+
+# CMD [ "node", "index.js" ]
