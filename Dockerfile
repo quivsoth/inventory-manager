@@ -26,5 +26,5 @@ EXPOSE 4444
 EXPOSE 8080
 
 
-#ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
+ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
 # CMD [ "node", "index.js" ]
