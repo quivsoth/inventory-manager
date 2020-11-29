@@ -1,8 +1,7 @@
 #!/usr/bin/bash
-
-node /usr/src/app/inventory-manager/index.js &
-P1=$!
 java -jar /opt/selenium/selenium-server-standalone.jar &
+P1=$!
+node /usr/src/app/inventory-manager/index.js &
 P2=$!
 wait $P1 $P2
 
