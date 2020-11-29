@@ -2,6 +2,9 @@ var webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver');
 
+console.log("chromedriver.path");
+console.log(chromedriver.path);
+
 chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 var message = "gm";
 
