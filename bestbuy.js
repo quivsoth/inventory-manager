@@ -6,7 +6,7 @@ var message = "gm";
 console.log('my node js in a docker stuff stuff stuff0');
 var driver = new webdriver.Builder().
     withCapabilities(webdriver.Capabilities.chrome())
-    .usingServer('http://chrome:4444/wd/hub')
+    .usingServer('http://172.17.0.2:4444/wd/hub')
     .build();
 
     async function Run(){
