@@ -5,7 +5,10 @@ WORKDIR /usr/src/app
 
 # Bundle app source
 RUN git clone https://github.com/quivsoth/inventory-manager.git
+
 USER root
+RUN apt-get install supervisor
+
 RUN chmod -R 777 /usr/src/app/inventory-manager
 
 RUN npm install
@@ -17,10 +20,11 @@ RUN npm install
 
 FROM selenium/standalone-chrome
 
+
 COPY --from=builder . .
 EXPOSE 4444
 EXPOSE 8080
 
 
-ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
+#ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
 # CMD [ "node", "index.js" ]
