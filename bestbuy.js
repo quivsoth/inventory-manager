@@ -2,11 +2,7 @@ var webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver');
 
-console.log("chromedriver.path");
-console.log(chromedriver.path);
-
-chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
-var message = "gm";
+chrome.setDefaultService(new chrome.ServiceBuilder("/opt/selenium/chromedriver-87.0.4280.20").build());
 
 //var driver = new RemoteWebDriver(new Uri(<RemoteUrl>), options);
 
