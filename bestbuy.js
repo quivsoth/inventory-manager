@@ -11,12 +11,12 @@ var driver = new webdriver.Builder().
 
     async function Run(){
         try{
-            driver.get('https://classroom.google.com/u/0/h');
-            await driver.wait(webdriver.until.elementLocated(webdriver.By.id("identifierId")), 10000);
-            // User Name
-            await driver.findElement(webdriver.By.id("identifierId")).sendKeys("TODO");
-            await driver.findElement(webdriver.By.id("identifierId")).sendKeys(webdriver.Key.ENTER);
-            await driver.sleep(1000);
+            driver.get('http://www.google.com/');
+            // await driver.wait(webdriver.until.elementLocated(webdriver.By.id("identifierId")), 10000);
+            // // User Name
+            // await driver.findElement(webdriver.By.id("identifierId")).sendKeys("TODO");
+            // await driver.findElement(webdriver.By.id("identifierId")).sendKeys(webdriver.Key.ENTER);
+            // await driver.sleep(1000);
         }
         catch(err){
             handleFailure(err, driver)
