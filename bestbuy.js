@@ -12,7 +12,7 @@ var driver = new webdriver.Builder().
     .usingServer('http://172.17.0.2:4444/wd/hub')
     .build();
 
-    async function Run(){
+    async function Run() {
         try{
             driver.get('http://www.google.com/');
             // await driver.wait(webdriver.until.elementLocated(webdriver.By.id("identifierId")), 10000);

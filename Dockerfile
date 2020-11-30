@@ -16,12 +16,8 @@ RUN npm install
 #COPY . .
 
 FROM selenium/standalone-chrome
-
-
 COPY --from=builder . .
 EXPOSE 4444
-EXPOSE 8080
-
-
-ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
+#EXPOSE 8080
+#ENTRYPOINT ["sh", "/usr/src/app/inventory-manager/startup.sh"]
 # CMD [ "node", "index.js" ]
