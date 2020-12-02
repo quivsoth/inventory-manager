@@ -10,11 +10,24 @@
     "type": "git",
     "url": "git+https://github.com/quivsoth/inventory-manager.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Inventory Check",
+    "best buy",
+    "amazon",
+    "walmart",
+    "antonline",
+    "ps5",
+    "xbox"
+  ],
+  "author": "Phillip Knezevich",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/quivsoth/inventory-manager/issues"
   },
-  "homepage": "https://github.com/quivsoth/inventory-manager#readme"
+  "homepage": "https://github.com/quivsoth/inventory-manager#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "nodemon": "^2.0.6",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
 }

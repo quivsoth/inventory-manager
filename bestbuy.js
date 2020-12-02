@@ -5,13 +5,9 @@ const webdriver = require('selenium-webdriver'),
 
 var options = new chrome.Options();
 options.addArguments("--headless");
+var t = setInterval(scanner, 10000);
 
-
-
-var myVar = setInterval(myTimer, 10000);
-
-function myTimer() {
-
+function scanner() {
     var driver = new webdriver.Builder()
         .forBrowser('chrome')
         //.usingServer('http://localhost:4444/wd/hub')
@@ -20,7 +16,6 @@ function myTimer() {
 
 
     driver.get('http://127.0.0.1:8080').then(function() {
-        driver.navigate.to(driver.getCurrentURL());
         driver.navigate().refresh();
         let inProgressPromise = driver.wait(() => {
             return driver.findElement(By.id('hw')).getText().then((text) => {
@@ -30,8 +25,9 @@ function myTimer() {
 
         return inProgressPromise.then(() => {
             console.log("Change detected, do stuff.");
+            clearInterval(t);
         });
-    }).catch(e => { /*console.log(e)*/ })
+    }).catch(e => { console.log("Text match not found") })
     .finally(e => { driver.close() });
 }
 
