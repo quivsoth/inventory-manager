@@ -1,9 +1,14 @@
-var http = require('http');
+const http = require('http');
+const fs = require('fs');
 
-console.log("starting web server");
 
-//create a server object:
-http.createServer(function (req, res) {
-  res.write('<h1 id=hw>Hello World!!!!</h1>'); //write a response to the client
-  res.end(); //end the response
-}).listen(8080); //the server object listens on port 8080
+fs.readFile('./index.html', function (err, html) {
+    if (err) {
+        throw err; 
+    }       
+    http.createServer(function(request, response) {
+        response.writeHeader(200, {"Content-Type": "text/html"});  
+        response.write(html);  
+        response.end();
+    }).listen(8080);
+});
