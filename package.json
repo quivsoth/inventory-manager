@@ -27,7 +27,9 @@
   "homepage": "https://github.com/quivsoth/inventory-manager#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "nodemailer": "^6.4.16",
     "nodemon": "^2.0.6",
-    "selenium-webdriver": "^4.0.0-alpha.7"
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "sendmail": "^1.6.1"
   }
 }
